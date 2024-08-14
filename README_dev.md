@@ -55,3 +55,4 @@ py -m twine upload dist/*
 - [ ] record and replay path
 - [ ] Plot velocity and acceleration
 - [ ] Some judgment functions for control
+- [ ] Change the render from matplotlib to pyglet
