@@ -1,8 +1,16 @@
+## ir_sim 2.1.5
+
+- Add citation for the project
+- Refine the comments for the functions
+
+
+
 ## ir_sim 2.1.4
 
 - Update function comments
-
-
+- Update the readme
+- Add interface to change the object distribution in the environment
+- Add Feature of obstacles random in the environment
 
 ## ir_sim 2.1.3
 - Fix errors in usages

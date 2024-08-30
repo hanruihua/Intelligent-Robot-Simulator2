@@ -9,7 +9,7 @@ import matplotlib.transforms as mtransforms
 
 class RobotDiff(ObjectBase):
     def __init__(self, shape='circle', shape_tuple=None, color='g', **kwargs):
-        super(RobotDiff, self).__init__(shape=shape, shape_tuple=shape_tuple, kinematics='diff', role='robot', color=color, **kwargs)
+        super(RobotDiff, self).__init__(shape=shape, shape_tuple=shape_tuple, kinematics='diff', role='robot', color=color, state_dim=3, **kwargs)
 
 
     def _kinematics(self, velocity, noise=False, alpha=[0.03, 0, 0, 0.03, 0, 0],  **kwargs):
@@ -79,7 +79,7 @@ class RobotDiff(ObjectBase):
     
     @property
     def velocity_xy(self):
-        return diff_to_omni(self.state[2, 0], self._velocity)
+        return diff_to_omni(self._state[2, 0], self._velocity)
 
 
 

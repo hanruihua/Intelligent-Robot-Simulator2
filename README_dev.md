@@ -56,3 +56,7 @@ py -m twine upload dist/*
 - [ ] Plot velocity and acceleration
 - [ ] Some judgment functions for control
 - [ ] Change the render from matplotlib to pyglet
+- [ ] Add example yaml files
+- [ ] Add some data structure for plot
+- [ ] Check the dimension of various values and fix the input error, such as state dim, velocity dim. 
+- [ ] Test Scenario for the different robot models and planners. 
