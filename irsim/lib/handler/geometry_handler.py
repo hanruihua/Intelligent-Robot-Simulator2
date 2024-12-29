@@ -278,7 +278,7 @@ class geometry_handler3d(ABC):
             Transformed geometry.
         """
         
-        def transform_with_state(x, y):
+        def transform_with_state(x, y, z):
             trans, rot = get_transform(state)
             points = np.array([x, y])
             new_points = rot @ points + trans
@@ -288,6 +288,63 @@ class geometry_handler3d(ABC):
         self.geometry = new_geometry
         
         return new_geometry
+
+
+
+
+
+class Cuboid3DGeometry(geometry_handler3d):
+
+    def __init__(self, name, **kwargs):
+        super().__init__(name, **kwargs)
+
+
+    def construct_init_geometry(self, length: float=1.0, width: float = 1.0, height: float=1.0, wheelbase: float=None):
+        
+        """
+        Construct a Cuboid3D object.
+
+        '''
+        Args
+            length: in x axis
+            width: in y axis
+            height: in z axis
+            wheelbase: for ackermann robot
+        '''
+        
+        Returns:
+            Cuboid3D object
+        """
+
+        if wheelbase is None:
+
+            vertices = [
+                        (-length / 2, -width / 2, 0),
+                        (length / 2, -width / 2, 0),
+                        (length / 2, width / 2, 0),
+                        (-length / 2, width / 2, 0),
+                        (-length / 2, -width / 2, height),
+                        (length / 2, -width / 2, height ),
+                        (length / 2, width / 2, height ),
+                        (-length / 2, width / 2, height),
+                        ]
+        else:
+            start_x = -(length - wheelbase) / 2
+            start_y = -width / 2
+
+            vertices = [
+                (start_x, start_y, 0),
+                (start_x + length, start_y, 0),
+                (start_x + length, start_y + width, 0),
+                (start_x, start_y + width, 0),
+                (start_x, start_y, height),
+                (start_x + length, start_y, height),
+                (start_x + length, start_y + width, height),
+                (start_x, start_y + width, height)]
+
+        return Polygon(vertices)
+
+
 
 
 #     def get_init_Gh(self):
