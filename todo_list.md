@@ -63,6 +63,13 @@
 - [ ] Make the dependency of the package optional
 - [ ] 3D rigid body
 - [ ] Documentation
-- [ ] Demonstrations in readme
 - [ ] robotics arm support
 - [ ] assign robot goals by mouse click
+- [ ] Add wrapper for ORCA algorithm
+- [ ] Reorganize the structure of the readme demonstration
+- [ ] argument type hint
+- [ ] Doc Noise world
+- [ ] Doc path manager and change the path
+- [ ] Analyze the performance (jerks, acceleration, etc.)
+- [ ] Interface with ROS
+- [ ] Interface with Pybullet or Gazebo
